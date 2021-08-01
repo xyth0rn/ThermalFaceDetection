@@ -72,23 +72,37 @@ Since I am using a 110° FOV version MLX90640, the camera should also be 110° F
 ## [2] Python Programs (Python3 only)
 
 ### [2-1] 1_mlx90640.py
-
+This program shows a live thermal imaging video read from the MLX90640.
+On the upper left corner shows the minimum temperature, maxmium temperature, and the current FPS.
 ![alt text]()
 
 ### [2-2] 2_cam_overlay_mlx.py
-If the FOV of your camera is not perfect match with the FOV of MLX90640, you can use this program to check the difference of FOV. 
+This program overlays the live thermal imaging video on top of the live camera.
+
+*Note: If the FOV of your camera does not match perfectly with the FOV of MLX90640, you can use this program to check the difference of FOV.*
 ![alt text]()
 
 ### [2-3] 3_thermalFaceDetection_1.py
-the simplest version, use jetson.inference & facenet face detection.
-the resulotion of jetson.utils.videoSource("csi://0") is 16:9 (PS: 4:3 resolution is too high)
-the resulotion of MLX90640 is 4:3
+This is the simplest thermal face detection program. The program uses the jetson.inference and Facenet-120 for the face detection.
+
+One key point in this program is the resolution setting. The resolution of MLX90640 is 4:3, while the resolution of the `jetson.utils.videoSource("csi://0")` is 16:9. In order to match the resolution of the two video sources, it is necessary to trim the video input of the MLX90640 from 4:3 to 16:9. This can be achieved by using the `numpy.reshape()` function.
+
+*Note: More information about the jetson.inference and Facenet-120 can be found on https://github.com/dusty-nv/jetson-inference.*
 .....
 ![alt text]()
 
 ### [2-4] 4_thermalFaceDetection_2.py
-"This model is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone."
-use cv2.dnn.readNetFromCaffe.
+This model is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone
+
+The program uses the `cv2.dnn` module to do inference.
+*Note: the `cv2.dnn` module is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
+
+1. 4:3
+2. higher accu
+
+*Note: OpenCV 4.5 version or later is needed in order to use CUDA. More information about installing OpenCV 4.5 can be found at https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html.*
+
+
 ![alt text]()
 
 ## Youtube link
