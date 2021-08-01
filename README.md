@@ -32,12 +32,28 @@ $ sudo pip3 install adafruit-circuitpython-mlx90640
 ```
 
 ### [1-3] MLX90640 & jetson nano connect
-circuit connection recommended by Melexis
+
+the connections between Jetson Nano & MLX90640
+![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/nano_mlx.png)
+
+circuit recommended by Melexis
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/mlx90640_cir.png)
+
+Jeson Nano GPIO map
+![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/Jetson_Nano_GPIO.png)
+
+### [1-4] optional: use EasyEDA & CNC to create a simple circuit board
+Schematics
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/mlx90640_sch.png)
+
+Layout
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/mlx90640_lay.png)
+
+CNC
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/pcb_1.jpeg)
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/pcb_2.jpeg)
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/pcb_3.jpeg)
+
+Final Results
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/pcb_4.jpeg)
 ![alt text](https://github.com/NicoIsAwesome/ThermalFaceDetection/blob/main/pcb_5.jpeg)
