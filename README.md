@@ -38,34 +38,34 @@ $ sudo pip3 install adafruit-circuitpython-mlx90640
 
 Pin connections between the Jetson Nano and MLX90640
 
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/nano_mlx.png)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/nano_mlx.png)
 
 Circuit recommended by Melexis
 
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/mlx90640_cir.png)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_cir.png)
 
 Jeson Nano GPIO map
 
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/Jetson_Nano_GPIO.png)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/Jetson_Nano_GPIO.png)
 
 ### [1-4] Use EasyEDA & CNC to Create a Simple Circuit Board (optional)
 I designed the schematics with EasyEDA, then used a simple CNC to make the circuit board.
 This step is optional if CNC is not available and can be replaced with using a breadboard or strip board.
 
 Schematics
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/mlx90640_sch.png)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_sch.png)
 
 Layout
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/mlx90640_lay.png)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_lay.png)
 
 CNC
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/pcb_1.jpeg)
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/pcb_2.jpeg)
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/pcb_3.jpeg)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_1.jpeg)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_2.jpeg)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_3.jpeg)
 
 ### [1-5] Assembling MLX90640 FLIR, camera, and the Jetson Nano
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/pcb_4.jpeg)
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/pcb_5.jpeg)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_4.jpeg)
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_5.jpeg)
 
 Since I am using a 110° FOV version MLX90640, the camera should also be 110° FOV.
 
@@ -76,13 +76,13 @@ Since I am using a 110° FOV version MLX90640, the camera should also be 110° F
 ### [2-1] 1_mlx90640.py
 This program shows a live thermal imaging video read from the MLX90640.
 On the upper left corner shows the minimum temperature, maxmium temperature, and the current FPS.
-![alt text]()
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/thermal_image.png)
 
 ### [2-2] 2_cam_overlay_mlx.py
 This program overlays the live thermal imaging video on top of the live camera.
 
 *Note: If the FOV of your camera does not match perfectly with the FOV of MLX90640, you can use this program to check the difference of FOV.*
-![alt text]()
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_thermal_overlap.png)
 
 ### [2-3] 3_thermalFaceDetection_1.py
 This is the simplest thermal face detection program. The program uses the jetson.inference and Facenet-120 for the face detection.
@@ -91,7 +91,7 @@ One key point in this program is the resolution setting. The resolution of MLX90
 
 *Note: More information about the jetson.inference and Facenet-120 can be found on https://github.com/dusty-nv/jetson-inference.*
 .....
-![alt text]()
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_detection.png)
 
 ### [2-4] 4_thermalFaceDetection_2.py
 This model is based on Single-Shot-Multibox detector and ResNet-10 Architecture as backbone. The program uses the `cv2.dnn` module to do inference.
@@ -103,7 +103,7 @@ It is worth noting that the resolution of this program's output is 4:3, meaning 
 *Note: OpenCV 4.5 version or later is needed in order to use CUDA. More information about installing OpenCV 4.5 can be found at https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html.*
 
 
-![alt text]()
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_temperature.png)
 
 ## Youtube link
 
