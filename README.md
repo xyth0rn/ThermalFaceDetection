@@ -1,4 +1,6 @@
 # ThermalFaceDetection
+The pandemic has been going on for a while, stores and schools are required to keep track of the people's body temperature to preliminary filter out those who may be in abnormal health conditions. There are serveral automatic thermal scanner on the market with the lowest price starting from 1500 USD. Because of the unaffordable price, the majority of schools and stores still rely on employees checking on people's body temperature one by one. This had me thinking about making a low-cost thermal face detection device so that schools and local businesses can afford to make one.
+
 In this project, I will be using the MLX90640 Far infrared thermal sensor array (110° FOV, 32x24 RES) and a 110° FOV camera compatible with the Nvidia Jetson Nano to build a thermal face detection device.
 
 ## [1] MLX90640 Setup
@@ -92,13 +94,11 @@ One key point in this program is the resolution setting. The resolution of MLX90
 ![alt text]()
 
 ### [2-4] 4_thermalFaceDetection_2.py
-This model is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone
+This model is based on Single-Shot-Multibox detector and ResNet-10 Architecture as backbone. The program uses the `cv2.dnn` module to do inference.
 
-The program uses the `cv2.dnn` module to do inference.
+It is worth noting that the resolution of this program's output is 4:3, meaning that this program uses the whole thermal imaging video source by MLX90640, thus granting the program a higher accuracy in thermal detection. 
+
 *Note: the `cv2.dnn` module is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
-
-1. 4:3
-2. higher accu
 
 *Note: OpenCV 4.5 version or later is needed in order to use CUDA. More information about installing OpenCV 4.5 can be found at https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html.*
 
@@ -122,4 +122,5 @@ https://www.pyimagesearch.com/2017/10/16/raspberry-pi-deep-learning-object-detec
 pyimagesearch: Face detection with OpenCV and deep learning
 https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/
 
-
+Q-engineering: Install OpenCV 4.5 on Jetson Nano
+https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html
