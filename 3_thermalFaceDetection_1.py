@@ -17,7 +17,7 @@ tdata = np.zeros((24*32,))
 def temp2Que(tempQueue):
     while True:
         mlx.getFrame(tdata) # read MLX temperatures into frame var
-        t_img = (np.reshape(tdata[96:672],(18,32))) # reshape to 24x32 print(t_img.shape) => (24, 32)
+        t_img = (np.reshape(tdata[96:672],(18,32))) # reshape to 18x32, print(t_img.shape) => (18, 32)
         tempQueue.put(t_img)
 
 tempQueue = Queue(maxsize=1)
