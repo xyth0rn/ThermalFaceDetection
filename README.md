@@ -1,7 +1,7 @@
 # ThermalFaceDetection
 The pandemic has been going on for a while, stores and schools are required to keep track of the people's body temperature to preliminary filter out those who may be in abnormal health conditions. There are serveral automatic thermal scanner on the market with the lowest price starting from 1500 USD. Because of the unaffordable price, the majority of schools and stores still rely on employees checking on people's body temperature one by one. This had me thinking about making a low-cost thermal face detection device so that schools and local businesses can afford to make one.
 
-In this project, I will be using the MLX90640 Far infrared thermal sensor array (110° FOV, 32x24 RES) and a 110° FOV camera compatible with the Nvidia Jetson Nano to build a thermal face detection device.
+In this project, I will be using the MLX90640 Far infrared thermal sensor array (110° FOV, 32x24 RES) and a 110° FOV camera compatible with the Nvidia Jetson Nano to build a thermal face detection device. The total cost of the build is around 200 USD.
 
 ## [1] MLX90640 Setup
 
@@ -90,7 +90,6 @@ This is the simplest thermal face detection program. The program uses the jetson
 One key point in this program is the resolution setting. The resolution of MLX90640 is 4:3, while the resolution of the `jetson.utils.videoSource("csi://0")` is 16:9. In order to match the resolution of the two video sources, it is necessary to trim the video input of the MLX90640 from 4:3 to 16:9. This can be achieved by using the `numpy.reshape()` function.
 
 *Note: More information about the jetson.inference and Facenet-120 can be found on https://github.com/dusty-nv/jetson-inference.*
-.....
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_detection.png)
 
 ### [2-4] 4_thermalFaceDetection_2.py
@@ -105,22 +104,25 @@ It is worth noting that the resolution of this program's output is 4:3, meaning 
 
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_temperature.png)
 
-## Youtube link
+## [4] Improvements
+After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but is yet to be tested. By adding an ultrasonic sensor to the device I believe it is possible to achieve further calibration between the distance and the temperature results.
 
-## Reference
-Melexis MLX90640:
-https://www.melexis.com/en/product/mlx90640/far-infrared-thermal-sensor-array
+## [5] Youtube Link
+
+## [6] Reference
+Melexis MLX90640:  
+https://www.melexis.com/en/product/mlx90640/far-infrared-thermal-sensor-array  
 https://www.reddit.com/r/JetsonNano/comments/jkrjye/mlx90640_32x24_interpolated_to_640x480_on_the/
 
 Hello AI World: 
 https://github.com/dusty-nv/jetson-inference#hello-ai-world
 
-LearnOpenCV: Face Detection – OpenCV, Dlib and Deep Learning ( C++ / Python )
-https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/
+LearnOpenCV: Face Detection – OpenCV, Dlib and Deep Learning ( C++ / Python )  
+https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/  
 https://www.pyimagesearch.com/2017/10/16/raspberry-pi-deep-learning-object-detection-with-opencv/
 
-pyimagesearch: Face detection with OpenCV and deep learning
+pyimagesearch: Face detection with OpenCV and deep learning  
 https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/
 
-Q-engineering: Install OpenCV 4.5 on Jetson Nano
+Q-engineering: Install OpenCV 4.5 on Jetson Nano  
 https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html
