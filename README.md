@@ -86,7 +86,7 @@ Since I am using a 110° FOV version MLX90640, the camera should also be 110° F
 
 ### [2-1] 1_mlx90640.py
 This program shows a live thermal imaging video read from the MLX90640.
-On the upper left corner shows the minimum temperature, maxmium temperature, and the current FPS.
+On the upper left corner shows the minimum temperature, maxmium temperature, and the current FPS.  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/thermal_image.png)
 
 ### [2-2] 2_cam_overlay_mlx.py
