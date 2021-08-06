@@ -47,32 +47,32 @@ $ sudo pip3 install adafruit-circuitpython-mlx90640
 
 ### [1-3] Connections between MLX90640 and the Jetson Nano
 
-Pin connections between the Jetson Nano and MLX90640
+Pin connections between the Jetson Nano and MLX90640  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/nano_mlx.png)
   
-Circuit recommended by Melexis
+Circuit recommended by Melexis  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_cir.png)
   
-Jeson Nano GPIO map
+Jeson Nano GPIO map  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/Jetson_Nano_GPIO.png)
 
 ### [1-4] Use EasyEDA & CNC to Create a Simple Circuit Board (optional)
 I designed the schematics with EasyEDA, then used a simple CNC to make the circuit board.
 This step is optional and can be replaced by using breadboard or strip board if CNC is not available.
 
-Schematics
+Schematics  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_sch.png)
 
-Layout
+Layout  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/mlx90640_lay.png)
 
-CNC
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_1.jpeg)
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_2.jpeg)
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_3.jpeg)
+CNC  
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_1.jpeg)  
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_2.jpeg)  
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_3.jpeg)  
 
-### [1-5] Assembling MLX90640 FLIR, camera, and the Jetson Nano
-![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_4.jpeg)
+### [1-5] Assembling MLX90640 FLIR, camera, and the Jetson Nano  
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_4.jpeg)  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/pcb_5.jpeg)
 
 Since I am using a 110° FOV version MLX90640, the camera should also be 110° FOV.  
