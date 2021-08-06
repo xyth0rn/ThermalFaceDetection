@@ -1,5 +1,5 @@
 # Thermal-Face Detection
-The pandemic has been going on for a while, stores and schools are required to keep track of the people's body temperature to perform preliminary filtration of those who may be in abnormal health conditions. There are serveral automatic thermal scanners on the market with the lowest price starting from 1500 USD. Because of the unaffordable price, the majority of schools and stores still rely on employees checking on people's body temperature one by one. This had me thinking about making a low-cost thermal-face detection device so that schools and local businesses can afford to make one.
+The pandemic has been going on for a while, stores and schools are required to keep track of the people's body temperature to perform preliminary filtration of those who may be in abnormal health conditions. There are some models of automatic thermal scanner on the market with the lowest price starting from 1500 USD. Because of the unaffordable price, the majority of schools and stores still rely on employees checking on people's body temperature one by one. This had me thinking about making a low-cost thermal-face detection device so that schools and local businesses can afford to make one.
 
 The following are photos taken from stores in my city. The two stores in the photos are one of the very few places in my city where machines are used to automatically check people's body temperature. It is worth noting that both machines **CANNOT** perform facial detection. The machines either pinpoints the highest temperature detected, or requires the users to position at a specific area in front of the camera.
 
@@ -82,7 +82,7 @@ Since I am using a 110° FOV version MLX90640, the camera should also be 110° F
 
 ### [2-1] 1_mlx90640.py
 This program shows a live thermal imaging video read from the MLX90640.
-On the upper left corner shows the minimum temperature, maxmium temperature, and the current FPS.    
+On the upper left corner shows the minimum temperature, maximum temperature, and the current FPS.    
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/thermal_image.png)
 
 ### [2-2] 2_cam_overlay_mlx.py
@@ -91,23 +91,23 @@ This program overlays the live thermal imaging video on top of the live camera.
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_thermal_overlap.png)
 
 ### [2-3] 3_thermalFaceDetection_1.py
-This is the simplest thermal face detection program. The program uses the jetson.inference and Facenet-120 for face detection.  
+This is the simplest thermal face detection program. The program uses jetson.inference and Facenet-120 for face detection.  
 One key point in this program is the resolution setting. The resolution of MLX90640 is 4:3, while the resolution of the `jetson.utils.videoSource("csi://0")` is 16:9. In order to match the resolution of the two video sources, it is necessary to trim the video input of the MLX90640 from 4:3 to 16:9. This can be achieved by using the `numpy.reshape()` function.  
 *Note: More information about the jetson.inference and Facenet-120 can be found on https://github.com/dusty-nv/jetson-inference.*  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_detection.png)
 
 ### [2-4] 4_thermalFaceDetection_2.py
-This is the final model based on Single-Shot-Multibox detector and ResNet-10 Architecture as backbone. The program uses the `cv2.dnn` module to do inference.  
+This is the final model based on the Single-Shot-Multibox detector and ResNet-10 Architecture as the backbone. The program uses the `cv2.dnn` module to do inference.  
 It is worth noting that the resolution of this program's output is 4:3, meaning that this program uses the whole thermal imaging video source by MLX90640, thus granting the program a higher accuracy in thermal detection. 
 
-*Note: the `cv2.dnn` module is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
+*Note: the `cv2.dnn` module is based on the Single-Shot-Multibox detector and uses ResNet-10 Architecture as the backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
 
 *Note: OpenCV 4.5 version or later is needed in order to use CUDA. More information about installing OpenCV 4.5 can be found at https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html.*
 
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_temperature.png)
 
 ## [4] Improvements
-After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but it is yet to be tested. By adding an ultrasonic sensor to the device, I believe it is possible to achieve further calibration between the distance and the temperature results.
+After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but it has not been tested. By adding an ultrasonic sensor to the device, I believe it is possible to achieve further calibration between the distance and the temperature results.
 
 ## [5] Youtube Link
 
