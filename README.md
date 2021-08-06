@@ -1,6 +1,17 @@
 # ThermalFaceDetection
 The pandemic has been going on for a while, stores and schools are required to keep track of the people's body temperature to preliminary filter out those who may be in abnormal health conditions. There are serveral automatic thermal scanner on the market with the lowest price starting from 1500 USD. Because of the unaffordable price, the majority of schools and stores still rely on employees checking on people's body temperature one by one. This had me thinking about making a low-cost thermal face detection device so that schools and local businesses can afford to make one.
 
+These are photos taken from stores in my city. The two stores in the photos are one of the very few places in my city where machines are used to automatically check people's body temperature. It is worth noting that both machines **CANNOT** perform facial detection. The machines either pinpoints the highest temperature detected, or requires the users to position at a specific area in front of the camrea.
+
+The machine at the front door of a supermarket.
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/market.jpg)
+  
+The machine at the front door of a shopping mall.
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/6plus_plaza.jpg)
+  
+Close-up photo of the actual machine in the previous photo. The result of the machine is transfered to the monitor via HDMI.
+![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/thermal_machine.jpg)
+
 In this project, I will be using the MLX90640 Far infrared thermal sensor array (110° FOV, 32x24 RES) and a 110° FOV camera compatible with the Nvidia Jetson Nano to build a thermal face detection device. The total cost of the build is around 200 USD.
 
 ## [1] MLX90640 Setup
