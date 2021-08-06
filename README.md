@@ -9,7 +9,7 @@ The machine at the front door of a supermarket.
 The machine at the front door of a shopping mall.
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/6plus_plaza.jpg)
   
-Close-up view of the actual machine in the previous photo. The result of the machine is transferred to the monitor via HDMI.
+Close-up view of the actual machine in the previous photo. The result of the machine is transferred to the monitor via cable.
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/thermal_machine.jpg)
 
 In this project, I will be using the MLX90640 Far Infrared Thermal Sensor Array (110° FOV, 32x24 RES) and a 110° FOV camera compatible with the Nvidia Jetson Nano to build a thermal-face detection device. The total cost of the build is around 200 USD.
