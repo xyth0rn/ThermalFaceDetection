@@ -97,7 +97,7 @@ One key point in this program is the resolution setting. The resolution of MLX90
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_detection.png)
 
 ### [2-4] 4_thermalFaceDetection_2.py
-This model is based on Single-Shot-Multibox detector and ResNet-10 Architecture as backbone. The program uses the `cv2.dnn` module to do inference.  
+This is the final model based on Single-Shot-Multibox detector and ResNet-10 Architecture as backbone. The program uses the `cv2.dnn` module to do inference.  
 It is worth noting that the resolution of this program's output is 4:3, meaning that this program uses the whole thermal imaging video source by MLX90640, thus granting the program a higher accuracy in thermal detection. 
 
 *Note: the `cv2.dnn` module is based on Single-Shot-Multibox detector and uses ResNet-10 Architecture as backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
