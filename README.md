@@ -87,7 +87,7 @@ On the upper left corner shows the minimum temperature, maximum temperature, and
 
 ### [2-2] 2_cam_overlay_mlx.py
 This program overlays the live thermal imaging video on top of the live camera.  
-*Note: If the FOV of your camera does not match perfectly with the MLX90640, you can use this program to check the difference.*
+*Note: If the FOV of your camera does not match perfectly with the MLX90640, you can use this program to check the difference.*  
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_thermal_overlap.png)
 
 ### [2-3] 3_thermalFaceDetection_1.py
