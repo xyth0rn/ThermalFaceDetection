@@ -110,6 +110,7 @@ It is worth noting that the resolution of this program's output is 4:3, meaning 
 After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but it has not been tested. By adding an ultrasonic sensor to the device, I believe it is possible to achieve further calibration between the distance and the temperature results.
 
 ## [5] Youtube Link  
+Low Cost Thermal Face Detection Device with Nvidia Jetson Nano and MLX90640  
 https://youtu.be/hpyW4LwhL44  
 
 ## [6] Reference
