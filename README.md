@@ -22,6 +22,11 @@ https://github.com/NVIDIA/jetson-gpio
 $ sudo pip3 install Jetson.GPIO
 $ sudo apt-get install -y libi2c-dev i2c-tools
 ```
+Set I2C bus freqeuncy to 400Khz (Must be executed after each reboot) 
+```
+sudo chmod 666 /sys/bus/i2c/devices/i2c-1/bus_clk_rate
+echo 400000 > /sys/bus/i2c/devices/i2c-1/bus_clk_rate
+```
 You can use the following command to check the I2C bus device.
 ```
 $ sudo i2cdetect -y -r 1
@@ -97,7 +102,7 @@ One key point in this program is the resolution setting. The resolution of MLX90
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_detection.png)
 
 ### [2-4] 4_thermalFaceDetection_2.py
-This is the final model based on the Single-Shot-Multibox detector and ResNet-10 Architecture as the backbone. The program uses the `cv2.dnn` module to do inference.  
+This model is based on the Single-Shot-Multibox detector and ResNet-10 Architecture as the backbone. The program uses the `cv2.dnn` module to do inference.  
 It is worth noting that the resolution of this program's output is 4:3, meaning that this program uses the whole thermal imaging video source by MLX90640, thus granting the program a higher accuracy in thermal detection. 
 
 *Note: the `cv2.dnn` module is based on the Single-Shot-Multibox detector and uses ResNet-10 Architecture as the backbone. More detailed information can be found at https://learnopencv.com/face-detection-opencv-dlib-and-deep-learning-c-python/ and https://www.pyimagesearch.com/2018/02/26/face-detection-with-opencv-and-deep-learning/.*
@@ -105,6 +110,9 @@ It is worth noting that the resolution of this program's output is 4:3, meaning 
 *Note: OpenCV 4.5 version or later is needed in order to use CUDA. More information about installing OpenCV 4.5 can be found at https://qengineering.eu/install-opencv-4.5-on-jetson-nano.html.*
 
 ![alt text](https://github.com/xyth0rn/ThermalFaceDetection/blob/main/photos/face_temperature.png)
+
+### [2-5] 5_thermalFaceDetection_3.py
+Thermal face detection with Haar cascades model.
 
 ## [4] Improvements
 After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but it has not been tested. By adding an ultrasonic sensor to the device, I believe it is possible to achieve further calibration between the distance and the temperature results.
