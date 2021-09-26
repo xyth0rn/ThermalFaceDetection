@@ -114,14 +114,14 @@ It is worth noting that the resolution of this program's output is 4:3, meaning 
 ### [2-5] 5_thermalFaceDetection_3.py
 Thermal face detection with Haar cascades model.
 
-## [4] Improvements
+## [3] Improvements
 After some testing, I noticed that the accuracy of the thermal sensor declines as the distance between a person and the device increases. I have thought about a possible solution but it has not been tested. By adding an ultrasonic sensor to the device, I believe it is possible to achieve further calibration between the distance and the temperature results.
 
-## [5] Youtube Link  
+## [4] Youtube Link  
 Low Cost Thermal Face Detection Device with Nvidia Jetson Nano and MLX90640  
 https://youtu.be/hpyW4LwhL44  
 
-## [6] Reference
+## [5] Reference
 Melexis MLX90640:  
 https://www.melexis.com/en/product/mlx90640/far-infrared-thermal-sensor-array  
 https://www.reddit.com/r/JetsonNano/comments/jkrjye/mlx90640_32x24_interpolated_to_640x480_on_the/
